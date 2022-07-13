@@ -1,0 +1,41 @@
+<header class="header">
+  <div class="header-container">
+    <h1 class="header-title">TIMER</h1>
+  </div>
+</header>
+<main>
+  <div class="timer-container">
+    <!-- <div class="timer-wrapper">
+      <div class="timer-minutes" #minutesText>0{{ minutes }} minutes :</div>
+      <div class="timer-seconds" #secondsText>0{{ seconds }} seconds</div>
+    </div> -->
+    <div class="timer_field">
+      <span class="timer_value" #minutes>00</span>
+      <span class="timer_label">Minutes</span>
+    </div>
+
+    <div class="timer_field">
+      <span class="timer_value" #seconds>00</span>
+      <span class="timer_label">Seconds</span>
+    </div>
+  </div>
+
+    <div class="buttons-container">
+      <button class="button" #startBtn (click)="onStartClick()" [ngClass]="running ? 'stop' : 'start'" type="button">
+        Start/Stop
+      </button>
+      <button
+        [ngClass]="timerPaused ? 'paused' : ''"
+        class="button"
+        type="button"
+        [disabled]="timerPaused"
+        #pauseButton
+      >
+      Wait
+      </button>
+      <button class="button" (click)="onResetClick()" type="button">
+        Reset
+      </button>
+    </div>
+  
+</main>
